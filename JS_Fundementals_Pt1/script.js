@@ -403,6 +403,7 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= minScore) {
 } else (console.log("Too Bad Loosers"));
 */
 
+/*
 const day = 'monday';
 
 switch(day) {
@@ -428,7 +429,23 @@ switch(day) {
         console.log('Not a valid day!');
 }
 
+*/
+const day = 'monday';
 
+if (day === 'monday') {
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+    console.log('Prepare mock exams');
+} else if (day === 'wednesday' || day === 'thursday') {
+    console.log('Write code examples');
+} else if (day === 'friday') {
+    console.log('Become an astronaut');
+} else if (day === 'saturday' || day === 'sunday') {
+    console.log('Do nothing wooooop');
+} else {
+    console.log('Not a valid day')
+}
 
 
 
