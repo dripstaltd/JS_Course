@@ -388,8 +388,6 @@ if (scoreDolphins == scoreKoalas)
 {
     console.log(teamsDraw);
 }
-*/
-
 
 
 const scoreDolphins = (96 + 108 + 89) / 3;
@@ -403,8 +401,32 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= minScore) {
 } else if (scoreKoalas >= minScore && scoreDolphins >= minScore) {
     console.log("Let's cut the Trophy in half?")
 } else (console.log("Too Bad Loosers"));
+*/
 
+const day = 'monday';
 
+switch(day) {
+    case 'monday': //day === 'monday' if true then execute 
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare mock exams');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples');
+        break;
+    case 'friday':
+        console.log('Become an astronaut');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Do nothing wooooop');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
 
 
 
