@@ -430,6 +430,7 @@ switch(day) {
 }
 
 */
+/*
 const day = 'monday';
 
 if (day === 'monday') {
@@ -446,12 +447,43 @@ if (day === 'monday') {
 } else {
     console.log('Not a valid day')
 }
+*/
+/*
+
+// EXPRESSIONS === Produces a Value!
+3 + 4
+1991
+true && false && !false
+// STATEMENT (Declaration) === Bigger piece of code which does NOT Produce a Value! Performs Actions
+
+if (23>10) {
+    const str = '23 is bigger';
+}
+// In a Template Literal i can only insert `${Expressions}` but not statements
+
+console.log(`I'm ${2037 - 1991} years old`);
+*/
+
+/*
+// Conditional (Ternary Operator because it has 3 parts) condition > ?if > :else
+const age = 23;
+// age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water');
+
+const drink = age >= 18 ? 'wine' : 'water';
 
 
+let drink2;
+if(age >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'water';
+}
+console.log(drink);
+console.log(drink2);
 
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'} :)`);
 
+// NOTE: Use Ternary Operators for quick decisions!! Not to replace if else Statements
 
-
-
-
+*/
 
