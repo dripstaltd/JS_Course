@@ -1,4 +1,5 @@
 'use strict'; 
+/*
 // has to be the very first line of code to use Strict Mode. (Secures Code) creates visual errors and forbids us to do certain things;
 
 let hasDriversLicense = false;
@@ -13,4 +14,28 @@ if (hasDriversLicense) console.log('I can drive');
 // const interface = 'Audio';
 // const private = 534;
 // const if = 534;
+*/
 
+// function logger() {FUNCTION BUDDY}
+// function logger() {
+//   console.log('Hi My name is What?');
+// }
+
+// invoking / running / calling function
+// logger();
+// logger();
+// logger();
+
+function fruitProcessor(apples, oranges) {
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+   // Creates the values of apples, oranges as juice
+}
+
+const appleJuice = fruitProcessor(5, 0); // Sets the values of apples, oranges and saves the value under a variable.
+console.log(appleJuice);
+// console.log(fruitProcessor(5, 0));
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+
+// DRY CODE: Reusable code so to not repeat ourselfs.
