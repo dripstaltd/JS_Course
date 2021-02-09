@@ -106,7 +106,7 @@ console.log (yearsUntilRetirement(1991, 'Ben'));
 //>   line 117: We call Line 110 function;                                              
 //>   line 120: We output a template string with out new values stored in placeholders; 
 
-
+/*
 const cutPieces = function (fruit) {
   return fruit * 4;
 }
@@ -121,3 +121,32 @@ function fruitProcessor(apples, oranges) {
   return juice;
 }
 console.log(fruitProcessor(2,3));
+*/
+//-|       REVIEWING FUNCTIONS                  
+//>  function ( THIS IS LOCAL TO THE FUNCTION); 
+//>                                             
+//>                                             
+//>  return exits!                              
+
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+}
+
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+  if(retirement > 0) {
+    return `${firstName} retires in ${retirement} years`;
+    console.log(`${firstName} retires in ${retirement} years`); //* invalid placement
+  } else {
+    // console.log(`${firstName} has already retired `);
+    return `${firstName} has already retired `;
+  }
+}
+console.log(yearsUntilRetirement(1991, 'Benjamin'));
+console.log(yearsUntilRetirement(1950, 'Sunny'));
+
+//-|   Three different ways of writing functions, but they all work in a similar way;  
+//-|                        Receive INPUT data, TRANSFORM data, and then OUTPUT data;  
+
