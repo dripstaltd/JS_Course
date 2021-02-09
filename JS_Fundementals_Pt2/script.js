@@ -127,7 +127,7 @@ console.log(fruitProcessor(2,3));
 //>                                             
 //>                                             
 //>  return exits!                              
-
+/*
 const calcAge = function (birthYear) {
   return 2037 - birthYear;
 }
@@ -146,7 +146,10 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 console.log(yearsUntilRetirement(1991, 'Benjamin'));
 console.log(yearsUntilRetirement(1950, 'Sunny'));
-
+*/
 //-|   Three different ways of writing functions, but they all work in a similar way;  
 //-|                        Receive INPUT data, TRANSFORM data, and then OUTPUT data;  
+
+
+
 
