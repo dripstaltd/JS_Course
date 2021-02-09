@@ -100,7 +100,7 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 }
 console.log (yearsUntilRetirement(1991, 'Ben'));
 */
-//-|         FUNCTIONS CALLING OTHER FUNCTIONS                                          
+//-|  FUNCTIONS CALLING OTHER FUNCTIONS                                                 
 //>   line 123: apples we set as 2;                                                     
 //>   line 110: Creates a function that cuts value into 4;                              
 //>   line 117: We call Line 110 function;                                              
@@ -117,7 +117,7 @@ function fruitProcessor(apples, oranges) {
   const applePieces = cutPieces(apples);
   const orangePieces = cutPieces(oranges);
 
-  const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
   return juice;
 }
 console.log(fruitProcessor(2,3));
