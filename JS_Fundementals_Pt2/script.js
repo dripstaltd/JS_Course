@@ -255,4 +255,44 @@ const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
 */
 
-//-| OBJECTS!    
+//-| OBJECTS!                     
+//> Arrays for Ordered Data       
+//> Objects for un-organized data 
+//>                   
+
+const benjamin = { // Object literal syntax
+  firstName: 'Ben',
+  lastName: 'McCarthy',
+  age: 2021 - 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Steven', 'Dennis']
+};
+console.log(benjamin);
+
+console.log(benjamin.lastName); //# DOT OPERATOR  '.'  
+console.log(benjamin['lastName']);
+
+const nameKey = 'Name';
+console.log(benjamin['first' + nameKey]);
+console.log(benjamin['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Ben? Choose between firstName, lastName, age, job, short and friends');
+
+if(benjamin[interestedIn]) {
+  console.log(benjamin[interestedIn]);
+} else {
+  console.log('Wrong request! Please choose between firstName, lastName, age, job and friends');
+}
+
+benjamin.location = 'London';
+benjamin['instagram'] = '@l_ucasmac';
+console.log(benjamin);
+
+//-| Challenge   
+//> "Benjamin has 3 friends, and his best friend is called Michael";
+
+console.log(benjamin.friends.length);
+
+benjamin.bestFriend = 'Michael';
+benjamin.short = (`${benjamin.firstName} has ${benjamin.friends.length} friends, his best friend is called ${benjamin.bestFriend}`); //# ${benjamin.friends[0]};
+
