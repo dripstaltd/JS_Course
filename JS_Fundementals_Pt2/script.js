@@ -152,7 +152,7 @@ console.log(yearsUntilRetirement(1950, 'Sunny'));
 
 //-| INTRODUCTION TO ARRAYS  
 //>                   
-
+/*
 const friends = ['Michael', 'Steven', 'Peter']; // literal syntax
 
 
@@ -188,3 +188,44 @@ console.log(age1, age2, age3);
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 
 console.log(ages);
+*/
+//-| Array Operations / Methods             
+//>  Push Method adds to the end of array;  
+//>                                         
+//>                                         
+
+const friends = ['Michael', 'Steven', 'Dennis'];
+
+// Adds elements
+//To the end [.length - 1]
+const newLength = friends.push('Jack');
+console.log(friends);
+console.log(newLength);
+// to position [0]
+friends.unshift('Jenn');
+console.log(friends);
+
+// Remove elements
+friends.pop(); // Last
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // First
+console.log(friends);
+
+console.log(friends.indexOf('Bob'));
+
+friends.push('23');
+console.log(friends.includes('Steven'));
+console.log(friends.includes('Graham'));
+console.log(friends.includes('23'));
+
+if (friends.includes('Mohammed')) {
+  console.log(`Mohammed is already here!`);
+} else {
+  friends.push('Mohammed');
+  console.log(`Mohammed has been added!`);
+  console.log(friends.includes('Mohammed'));
+  console.log(friends);
+}
