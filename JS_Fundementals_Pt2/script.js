@@ -360,14 +360,15 @@ const ben = {
 
   getSummary: function () {
     ben.genderSet();
-    ben.validCBT();
-    this.summary = `${this.firstName} ${this.lastName} is a fully qualified ${this.job}, ${this.heShe} is ${this.age} years old, and ${this.vCBT} ${this.firstName} has ${this.family.length} family members named ${this.family}.`;
+    this.summary = `${this.firstName} ${this.lastName} is a fully qualified ${this.job}, ${this.heShe} is ${this.age} years old, and ${this.hasCBT ? 'currently holds a valid CBT.' : 'currently does not hold a valid CBT.'} ${this.firstName} has ${this.family.length} family members, ${this.hisHers} family members are called ${this.family} and they love ${this.himHer} very much.`;
     return this.summary;
   }
-
 };
 
-ben.genderSet();
+ben.getSummary();
+console.log(ben.summary);
+
+
 console.log(ben.hisHers);
 console.log(ben.himHer);
 console.log(ben.heShe);
@@ -377,8 +378,7 @@ console.log(ben.heShe);
 // console.log(ben['calcAge'](1991));// accessed via 'Bracket operator';
 console.log(ben.calcAge());//> Changed the calcAge function / property to not require a parameter;
 console.log(ben.age);//> this is the most efficient solution!
-ben.getSummary();
-console.log(ben.summary);
+
 
 
 
