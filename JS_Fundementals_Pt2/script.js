@@ -259,7 +259,7 @@ console.log(totals);
 //> Arrays for Ordered Data       
 //> Objects for un-organized data 
 //>                   
-
+/*
 const benjamin = { // Object literal syntax
   firstName: 'Ben',
   lastName: 'McCarthy',
@@ -295,4 +295,92 @@ console.log(benjamin.friends.length);
 
 benjamin.bestFriend = 'Michael';
 benjamin.short = (`${benjamin.firstName} has ${benjamin.friends.length} friends, his best friend is called ${benjamin.bestFriend}`); //# ${benjamin.friends[0]};
+*/
+//-|                                                             ;
+//-|              Objects & Object Methods Methods               ;
+//-|                                                             ;
+//>                                                              ;
+//>  -  Any function connected to an Object is called a 'Method' ;
+//>  - function inside an object uses : becomes a property       ;
+//>  - Declarations DON'T work here, only function Expressions   ;
+//>                                                              ;
+
+
+const ben = {
+
+  //> object properties;
+  firstName: 'Ben',
+  lastName: 'McCarthy',
+  birthYear: 1991,
+  job: 'Ginger',
+  sex: 'Male',
+  family: ['Giselle', 'Gareth', 'Lulu'],
+  hasCBT: true,
+
+  //> function expression, using 'this' keyWord;
+  // calcAge: function () {
+  //   return 2021 - this.birthYear;
+  // }
+
+  //-| Creating a new property with ... this ...                              ;
+  //> same as above but taking 'this' keyword one step further                ;
+  //> using 'this' to create a property called age                            ;
+  //> this.age stores the value produced by '2021 - this.birthYear' expression;
+
+  calcAge: function () {
+    this.age = 2021 - this.birthYear;
+    return this.age;
+  },
+  
+  //> MY FIRST FUNCTION SOLELY CREATED BY ME!
+  genderSet: function () {
+    if (this.sex == 'Male') {
+      this.hisHers = 'his';
+      this.heShe = 'he';
+      this.himHer = 'him';
+      return this.hisHers, this.heShe, this.himHer;
+    } else {
+      this.hisHers = 'hers';
+      this.heShe = 'she';
+      this.himHer = 'her';
+      return this.hisHers, this.heShe, this.himHer;
+    }
+  },
+
+  validCBT: function () {
+    if (this.hasCBT == true) {
+      this.vCBT = `currently holds a valid CBT.`;
+      return this.vCBT;
+    } else {
+      this.nvCBT =`currently does not hold a valid CBT.`;
+      return this.vCBT;
+    }
+    
+  },
+
+  getSummary: function () {
+    ben.genderSet();
+    ben.validCBT();
+    this.summary = `${this.firstName} ${this.lastName} is a fully qualified ${this.job}, ${this.heShe} is ${this.age} years old, and ${this.vCBT} ${this.firstName} has ${this.family.length} family members named ${this.family}.`;
+    return this.summary;
+  }
+
+};
+
+ben.genderSet();
+console.log(ben.hisHers);
+console.log(ben.himHer);
+console.log(ben.heShe);
+
+// console.log(ben.calcAge(ben.birthYear)); // accessing the property using the birthYear property;
+// console.log(ben.calcAge(1991)); // accessed via 'dot operator';
+// console.log(ben['calcAge'](1991));// accessed via 'Bracket operator';
+console.log(ben.calcAge());//> Changed the calcAge function / property to not require a parameter;
+console.log(ben.age);//> this is the most efficient solution!
+ben.getSummary();
+console.log(ben.summary);
+
+
+
+
 
