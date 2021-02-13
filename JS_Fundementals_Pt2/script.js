@@ -6,7 +6,7 @@
 // ? 
 // *
 // !
-// Todo: 
+//: 
 
 
 
@@ -16,7 +16,7 @@
 // let hasDriversLicense = false;
 // const passTest = true;
 
-// TODO: We want to write some logic so that that when they pass the test hasDriversLicense changes to true;
+//: We want to write some logic so that that when they pass the test hasDriversLicense changes to true;
 
 // if (passTest) hasDriversLicense = true;
 // if (hasDriversLicense) console.log('I can drive');
