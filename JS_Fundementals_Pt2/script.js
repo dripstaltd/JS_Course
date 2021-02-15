@@ -234,26 +234,26 @@ if (friends.includes('Mohammed')) {
 
 //-| Coding Challenge ['arrays', 'array', '4rr4y5' ];  
 
-/*
-const bills = [125, 555, 44]
-function calcTip(bill) {
-  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-  return bill;
-}
-const tips = new Array []
-console.log(calcTip(bills[0]));
-*/
 
-/*
-const calcTip = function(bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(bills, tips);
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(totals);
-*/
+// const bills = [125, 555, 44]
+// function calcTip(bill) {
+//   bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+//   return bill;
+// }
+// const tips = new Array [];
+// console.log(calcTip(bills[0]));
+
+
+
+// const calcTip = function(bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(bills, tips);
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(totals);
+
 
 //-| OBJECTS!                     
 //> Arrays for Ordered Data       
@@ -414,16 +414,16 @@ for(let rep = 1; rep <= 10; rep++) {
 //>                                                          ;
 
 //-|                                                         ;
-// const benArray = [
-//   'Ben',
-//   'McCarthy',
-//   2037 - 1991,
-//   'Ginger',
-//   ['Giselle', 'Gareth', 'Lulu'],
-//   true
-// ];
+const benArray = [
+  'Ben',
+  'McCarthy',
+  2037 - 1991,
+  'Ginger',
+  ['Giselle', 'Gareth', 'Lulu'],
+  true
+];
 //: Creates an empty Array;
-// const types = [];
+const types = [];
 
 //: we want to log positions:
 //: [0] = 'Ben';
@@ -432,22 +432,22 @@ for(let rep = 1; rep <= 10; rep++) {
 //: [5] = [family names];
 //: [6] = does not exist so stops here
 //-|                                                         ;
-// for(let i = 0; i < benArray.length; i++) {
+for(let i = 0; i < benArray.length; i++) {
 
-// // Reading from benArray;
-//   console.log(benArray[i], typeof benArray[i]);
+// Reading from benArray;
+  console.log(benArray[i], typeof benArray[i]);
 
-// // Filling the array;
-//   // types[i] = typeof benArray[i];
-//   types.push(typeof benArray[i]);
-// };
+// Filling the array;
+  // types[i] = typeof benArray[i];
+  // types.push(typeof benArray[i]);
+};
 // console.log(types);
 
 //-|                                                         ;
 //> Use for looping ARRAYS; 
 // const years = [1991, 2007, 1969, 2020];
 // const ages = [];
-
+// // 
 // for(let i = 0; i < years.length; i++) {
 //   ages.push(2037 - years[i]);
 // };
@@ -518,24 +518,25 @@ for (let exercise = 1; exercise < 4; exercise++) {
 //   console.log(`Lifting weight repetition ${rep} 🤢`);
 // };
 // 
-let rep = 1;
-while (rep <= 10) {
+
+// let rep = 1;
+// while (rep <= 10) {
   // console.log(`WHILE: Lifting weight repetition ${rep} 🤢`);
-  rep++;
-};
+//   rep++;
+// };
 //
 
 //-| DICE ROLLS                                              ;
 //> start with a random dice number                          ;
-let dice = Math.trunc(Math.random() * 6) + 1; 
+// let dice = Math.trunc(Math.random() * 6) + 1; 
 //> checking if that number is different from 6              ;
-while (dice !== 6) {
+// while (dice !== 6) {
   //> logging the dice roll if not 6                         ;
-  console.log(`You rolled a ${dice}`);  
+  // console.log(`You rolled a ${dice}`);  
   //> creating a new dice number                             ;
-  dice = Math.trunc(Math.random() * 6) + 1;
+  // dice = Math.trunc(Math.random() * 6) + 1;
   //> if dice is a the log it                                ;
   //? if statement can contradict.... why, how?              ;
-  if (dice === 6) console.log(`Congrats, You rolled a ${dice}!`)
-};
+  // if (dice === 6) console.log(`Congrats, You rolled a ${dice}!`)
+// };
 
