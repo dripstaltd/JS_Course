@@ -305,7 +305,7 @@ benjamin.short = (`${benjamin.firstName} has ${benjamin.friends.length} friends,
 //>  - Declarations DON'T work here, only function Expressions   ;
 //>                                                              ;
 
-
+/*
 const ben = {
 
   //> object properties;
@@ -378,9 +378,98 @@ console.log(ben.heShe);
 // console.log(ben['calcAge'](1991));// accessed via 'Bracket operator';
 console.log(ben.calcAge());//> Changed the calcAge function / property to not require a parameter;
 console.log(ben.age);//> this is the most efficient solution!
+*/
 
 
 
 
+//-|                                                             ;
+//-|                  Iteration: The for Loop                    ;
+//-|                 -------------------------                   ;
+//-|                                                             ;
+//>                                                              ;
+//>  - Loops allow us to automate repetitive tasks, tasks, tasks ;
+//>                                                              ;
 
+//: Below is what a for loop will make easier;
+// console.log('Lifting weights repetition 1 🏋️');
+// console.log('Lifting weights repetition 2 🏋️');
+// console.log('Lifting weights repetition 3 🏋️');
+// console.log('Lifting weights repetition 4 🏋️');
+// console.log('Lifting weights repetition 5 🏋️');
 
+//> for loop keeps running while condition is TRUE
+// for(counter variable; condition 'time'; repetition + number of steps) { executable code } 
+/*
+for(let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️`);
+}
+*/
+//-|                                                         ;
+//-|           Looping Arrays, Breaking & Continuing         ;
+//-|           -------------------------------------         ;
+//-|                                                         ;
+//>                                                          ;
+//>  -  Remember Arrays start at [0] so i = 0                ;
+//>                                                          ;
+
+//-|                                                         ;
+// const benArray = [
+//   'Ben',
+//   'McCarthy',
+//   2037 - 1991,
+//   'Ginger',
+//   ['Giselle', 'Gareth', 'Lulu'],
+//   true
+// ];
+//: Creates an empty Array;
+// const types = [];
+
+//: we want to log positions:
+//: [0] = 'Ben';
+//: [1] = 'McCarthy';
+//: ... up to;
+//: [5] = [family names];
+//: [6] = does not exist so stops here
+//-|                                                         ;
+// for(let i = 0; i < benArray.length; i++) {
+
+// // Reading from benArray;
+//   console.log(benArray[i], typeof benArray[i]);
+
+// // Filling the array;
+//   // types[i] = typeof benArray[i];
+//   types.push(typeof benArray[i]);
+// };
+// console.log(types);
+
+//-|                                                         ;
+//> Use for looping ARRAYS; 
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for(let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// };
+
+// console.log(ages);
+//-|                                                         ;
+//-|                   Continue & Break                      ;
+//-|                                                         ;
+//>              Loop Statement: Continue                    ;
+//: Exit the current iteration of the loop, continue to next ;
+//>                Loop Statement: Break                     ;
+//: Break is used to terminate the entire loop               ;
+//-|                                                         ;
+
+// console.log('--- ONLY STRINGS ---');
+// for(let i = 0; i < benArray.length; i++) {
+//   if(typeof benArray[i] !== 'string') continue;
+//     console.log(benArray[i], typeof benArray[i]);
+//   }; 
+
+//   console.log('--- BREAK WHEN NUMBER IS FOUND ---');
+//   for(let i = 0; i < benArray.length; i++) {
+//     if(typeof benArray[i] === 'number') break;
+//       console.log(benArray[i], typeof benArray[i]);
+//     }; 
