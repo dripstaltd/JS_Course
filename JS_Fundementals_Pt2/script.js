@@ -473,3 +473,69 @@ for(let rep = 1; rep <= 10; rep++) {
 //     if(typeof benArray[i] === 'number') break;
 //       console.log(benArray[i], typeof benArray[i]);
 //     }; 
+
+//> Counting Backwards and starting from the last position
+// const ben = [
+//   'Ben',
+//   'McCarthy',
+//   2037 - 1991,
+//   'Ginger',
+//   ['Giselle', 'Gareth', 'Lulu'],
+// ];
+
+// 0, 1, ..., 4;
+// 4,3, ...,0;
+
+// for(let i = ben.length - 1; i >= 0; i--) {
+//   console.log(i, ben[i]);
+// };
+
+//>                                                          ;
+
+/*
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🤢`);
+  };
+};
+*/
+//>                    END OF for LOOP                       ;
+
+
+//-|                                                         ;
+//-|                     while LOOP                          ;
+//-|                                                         ;
+//> while: while loop can only specify a (condition)         ;
+//: while: When we don't know how many times it should run   ;
+//> like a dice roll Math.trunc(Math.random() * 6) + 1;      ;
+//:                                                          ;
+//-|                                                         ;
+
+// For Comparison:
+// for (let rep = 1; rep < 10; rep++) {
+//   console.log(`Lifting weight repetition ${rep} 🤢`);
+// };
+// 
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`WHILE: Lifting weight repetition ${rep} 🤢`);
+  rep++;
+};
+//
+
+//-| DICE ROLLS                                              ;
+//> start with a random dice number                          ;
+let dice = Math.trunc(Math.random() * 6) + 1; 
+//> checking if that number is different from 6              ;
+while (dice !== 6) {
+  //> logging the dice roll if not 6                         ;
+  console.log(`You rolled a ${dice}`);  
+  //> creating a new dice number                             ;
+  dice = Math.trunc(Math.random() * 6) + 1;
+  //> if dice is a the log it                                ;
+  //? if statement can contradict.... why, how?              ;
+  if (dice === 6) console.log(`Congrats, You rolled a ${dice}!`)
+};
+
