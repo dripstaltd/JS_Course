@@ -133,6 +133,7 @@ const printForecast = function (arr) {
 console.log(printForecast(t1, t2));
 */
 
+/*
 const data1 = [17, 21, 23];
 const data2 = [12, 5, -5, 0, 4];
 
@@ -146,3 +147,4 @@ const printForecast = function (arr) {
   console.log('... ' + str);
 };
 printForecast(data1);
+*/
