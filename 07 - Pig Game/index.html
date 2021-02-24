@@ -8,6 +8,17 @@
     <title>Pig Game</title>
   </head>
   <body>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Play Pig!</h1>
+      <h2>Please Enter your names (Player 1 goes first):</h2>
+      <form id="your-name">
+        <input id="player1--0" type="text" placeholder="Player 1" />
+        <input id="player2--1" type="text" placeholder="Player 2" />
+        <button id="pNameSubmit">🎲Play!</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
     <main>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
