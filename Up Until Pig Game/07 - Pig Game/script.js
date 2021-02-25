@@ -3,6 +3,15 @@
 
 //-| MODAL END;
 
+//-|                                                             ;
+//-|                    Document handlers                        ;
+//-|                                                             ;
+//>                                                              ;
+//>  -   document.getElementById('ID')                           ;
+//>  -   document.querySelector('#ID')                           ;
+//>  -   document.querySelector('CLASS')                         ;
+//>                                                              ;
+
 let scores, playing, currentScore, activePlayer;
 
 //-| Selecting elements;
