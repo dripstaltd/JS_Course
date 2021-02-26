@@ -120,7 +120,7 @@ to window (in the browser);*/
 /**/
 //-|                                         ;
 /**/
-console.log(this);
+// console.log(this);
 /**/
 /*
 const calcAge = function (birthYear) {
@@ -156,6 +156,7 @@ const matilda = {
 /**/
 //-|                                         ;
 //> All of this is in the global scope!      ;
+/*
 const ben = {
   firstName: 'Ben',
   year: 1991,
@@ -166,22 +167,22 @@ const ben = {
   greet: () => console.log(`Hey ${this.firstName}`),
 };
 ben.greet();
+*/
 //BUG; //! NEVER USE ARROW FUNCTION IN A METHOD;
 //* Arrow Functions use it's parents 'this'  ;
 //BUG; //! var will create a undefined variable in the global scope;
 //-|                                         ;
-/**/
 //-|           Arguments keyword             ;
-/**/
 //-|                                         ;
 /**/
+/*
 const addExpr = function (a, b) {
   console.log(arguments);
   return a + b;
 };
 addExpr(2, 5);
 addExpr(2, 5, 8, 12);
-
+*/
 //BUG; //! arguments keyword only works in regular expressions;
 /*
 var addArrow = (a, b) => {
@@ -190,6 +191,58 @@ var addArrow = (a, b) => {
 };
 addArrow(2, 5, 8);
 */
+//-|                                         ;
+//-|      Primitive Vs Reference Types       ;
+//-|                                         ;
+/*
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Ben',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me:', me);
+*/
+//-|                                         ;
+//-|    Primitive Vs Objects in Practice     ;
+//-|                                         ;
+/**/
+// Primitive types:
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+// Reference types:
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage:', jessica);
+console.log('After marriage:', marriedJessica);
+// Copying objects:
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+//
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+jessicaCopy.family.push('Mary');
+console.log('Before marriage:', jessica2);
+console.log('After marriage:', jessicaCopy);
+
 /**/
 /**/
 /**/
@@ -202,9 +255,3 @@ addArrow(2, 5, 8);
 /**/
 /**/
 /**/
-/**/
-/**/
-/**/
-/**/
-//? Rust Roulette Wheel;
-//: OpenCv with javaScript;
