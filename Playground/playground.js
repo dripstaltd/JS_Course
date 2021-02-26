@@ -1,19 +1,21 @@
 "use strict";
 
 // > Declaring a couple things first, using 'let' as they will change with user input;
-
+/*
 let ns;
 let dw;
 let bs;
 let tc;
 const bsS = (10, 25, 30, 50, 60, 70, 80, 100, 120, 150, 200);
-
+*/
 //-| Final Calculation
+/*
 const nel = (a, b, c) => (a * b) / c;
-
+*/
 //-| Pre Calculations depending on user input
+/*
 function bAdjust(a, b, c) {}
-
+*/
 //>                                                                        ;
 //-| Coding challenge ideas:                                               ;
 //>                                                                        ;
@@ -26,3 +28,53 @@ function bAdjust(a, b, c) {}
 //> Students must work together to help each other before asking for help  ;
 //> But not students who are further ahead than they are                   ;
 //>                                                                        ;
+
+//>                                                                        ;
+//>                          Challenge #2:                                 ;
+//>                                                                        ;
+
+const colorPickerArr = [
+  "BC 7C 0F",
+  "B8 73 10",
+  "C3 88 1B",
+  "2D 11 0B",
+  "0C 21 0F",
+  "15 1F 2A",
+  "49 49 28",
+  "4A 4B 2B",
+  "5E 62 37",
+  "54 5B 3D",
+  "64 67 3A",
+  "5E 5D 36",
+  "4F 4D 2C",
+  "49 47 27",
+];
+//-| Setting Colors to the Numbers on Roulette Wheel;
+let rG = "";
+let rB = "";
+let colorIs = [];
+
+//-| Looping through colorPickerArr;
+for (let i = 0; i < colorPickerArr.length; i++) {
+  // Grabbing 1st Character in array
+  const charOne = colorPickerArr[i].charAt(colorPickerArr[i].length - 8);
+  if (
+    charOne === "B" ||
+    charOne === "C" ||
+    charOne === "4" ||
+    charOne === "5" ||
+    charOne === "6"
+  ) {
+    colorIs.push("Yellow");
+  }
+  if (charOne === "2") {
+    colorIs.push("Red");
+  }
+  if (charOne === "0") {
+    colorIs.push("Green");
+  }
+  if (charOne === "1") {
+    colorIs.push("Blue");
+  }
+  console.log(colorIs);
+}
