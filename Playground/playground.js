@@ -32,7 +32,7 @@ function bAdjust(a, b, c) {}
 //>                                                                        ;
 //>                          Challenge #2:                                 ;
 //>                                                                        ;
-
+/*
 const colorPickerArr = [
   "BC 7C 0F",
   "B8 73 10",
@@ -49,12 +49,15 @@ const colorPickerArr = [
   "4F 4D 2C",
   "49 47 27",
 ];
+*/
 //-| Setting Colors to the Numbers on Roulette Wheel;
+/*
 let rG = "";
 let rB = "";
 let colorIs = [];
-
+*/
 //-| Looping through colorPickerArr;
+/*
 for (let i = 0; i < colorPickerArr.length; i++) {
   // Grabbing 1st Character in array
   const charOne = colorPickerArr[i].charAt(colorPickerArr[i].length - 8);
@@ -78,3 +81,22 @@ for (let i = 0; i < colorPickerArr.length; i++) {
   }
   console.log(colorIs);
 }
+*/
+
+//-| Second try with what i have learnt with destructuring >>
+const colorPickerArr = [
+  "BC 7C 0F",
+  "B8 73 10",
+  "C3 88 1B",
+  "2D 11 0B",
+  "0C 21 0F",
+  "15 1F 2A",
+  "49 49 28",
+  "4A 4B 2B",
+  "5E 62 37",
+  "54 5B 3D",
+  "64 67 3A",
+  "5E 5D 36",
+  "4F 4D 2C",
+  "49 47 27",
+];
