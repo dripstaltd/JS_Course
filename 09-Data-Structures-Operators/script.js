@@ -53,10 +53,12 @@ const restaurant = {
 // Expand & Unpack Array into individual Elements;
 // 1. Used to build new arrays;
 // 2. pass multiple values into a function;
+//: Where we would use VALUES seperated by commas: (1, 2, 3, 4)
 //////////////////////////////////////////////////////////
 // REMEMBER :  Rest Operator:
 // Pack Elements into an Array;
 // 1. Collect multiple elements and condense them into an array;
+//: Where we would use VARIABLES seperated by commas: (main, main2, main3, other)
 //////////////////////////////////////////////////////////
 
 // 1) Destructuring
