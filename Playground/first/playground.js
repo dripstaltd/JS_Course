@@ -82,6 +82,12 @@ for (let i = 0; i < colorPickerArr.length; i++) {
   console.log(colorIs);
 }
 */
+let yellow;
+let blue;
+let green;
+let red;
+
+let colorIs = [];
 
 //-| Second try with what i have learnt with destructuring >>
 const colorPickerArr = [
@@ -100,3 +106,49 @@ const colorPickerArr = [
   "4F 4D 2C",
   "49 47 27",
 ];
+
+const arr = colorPickerArr;
+let eCP = [];
+let temp = [];
+let cT = [];
+const colors = [[yellow], [blue], [red], [green]];
+
+let yellowOne = [];
+
+for (let i = 0; i < colorPickerArr.length; i++) {
+  const spin = colorPickerArr[i];
+  eCP.push(spin.replace(/\s/g, ""));
+}
+console.log(eCP);
+
+for (let i = 0; i < eCP.length; i++) {
+  const charOne = eCP[i].charAt(eCP[i].length - 6);
+
+  if ((charOne === "B", "C")) {
+    console.log("Yellow");
+  }
+  // element 1 has been selected      >>
+  // what do i want to do with it?    >>
+  else if (
+    charOne === "B" ||
+    charOne === "C" ||
+    charOne === "4" ||
+    charOne === "5" ||
+    charOne === "6"
+  ) {
+    colorIs.push("Yellow");
+  }
+  if (charOne === "2") {
+    colorIs.push("Red");
+  }
+  if (charOne === "0") {
+    colorIs.push("Green");
+  }
+  if (charOne === "1") {
+    colorIs.push("Blue");
+  }
+  console.log(colorIs);
+  colorIs.push(charOne);
+}
+
+console.log(temp);
