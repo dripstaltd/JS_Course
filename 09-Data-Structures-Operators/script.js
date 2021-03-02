@@ -48,6 +48,10 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+// Use ANY data type, return ANY data type, short-circuiting;
+console.log(3 || 'Ben');
+
+/*
 //////////////////////////////////////////////////////////
 // REMEMBER :  Spread Operator:
 // Expand & Unpack Array into individual Elements;
@@ -60,7 +64,6 @@ const restaurant = {
 // 1. Collect multiple elements and condense them into an array;
 //: Where we would use VARIABLES seperated by commas: (main, main2, main3, other)
 //////////////////////////////////////////////////////////
-
 // 1) Destructuring
 //-| Rest Pattern & Perameters;
 // SPREAD, because on RIGHT side of =
@@ -96,6 +99,7 @@ add(...x);
 
 // Ordering Pizza
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
+*/
 //////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
 /*
