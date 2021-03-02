@@ -25,7 +25,7 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
+  // Function containing delivery infomation for current order
   orderDelivery: function ({
     starterIndex = 1,
     mainIndex = 0,
@@ -36,7 +36,75 @@ const restaurant = {
       `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  // Method to order just pasta, which needs just 3 ingredients
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
+
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+//-| Using Spread Operator (...)
+const arr = [7, 8, 9];
+/////////////////////////
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // same as 👇
+const newArr = [1, 2, ...arr];
+console.log(badNewArr); // same as 👇
+console.log(newArr);
+/////////////////////////
+console.log(...newArr); // same as 👇
+console.log(1, 2, 7, 8, 9);
+/////////////////////////
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+// This is a new array, we are not pushing or shifting Gnocci into the old array;
+/////////////////////////
+// Spread operator takes all the elements from the array, but also doesn't create new variables, so we can use this where we would want to seperate these values by commas;
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Spread Operator can be used on all iterables
+// Iterables: arrays, strings, maps, sets. NOT objects
+const str = 'Ben';
+const letters = [...str, ' ', 'M.'];
+console.log(letters);
+console.log(...str);
+/////////////////////////
+// Real World Example //
+/////////////////////////
+// : Multiple Prompt inputs stored as array ingredients >>
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt('Ingredient 2?'),
+  // prompt('Ingredient 3?'),
+];
+
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients); // Modern Es6 syntax
+//////////////
+// Objects //
+//////////////
+const newRestaurant = {
+  foundedIn: 1995,
+  ...restaurant,
+  founder: 'Gezim Heartshaft',
+};
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
 
 /*
 //////////////////////////////////////////////////////////
