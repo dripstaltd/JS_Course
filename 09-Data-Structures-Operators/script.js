@@ -42,12 +42,62 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  // Method to or pizza, storing the main ingredient variable and storing the rest of the ingredients together in another variable called (otherIngredients)
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+//////////////////////////////////////////////////////////
+// REMEMBER :  Spread Operator:
+// Expand & Unpack Array into individual Elements;
+// 1. Used to build new arrays;
+// 2. pass multiple values into a function;
+//////////////////////////////////////////////////////////
+// REMEMBER :  Rest Operator:
+// Pack Elements into an Array;
+// 1. Collect multiple elements and condense them into an array;
+//////////////////////////////////////////////////////////
+
+// 1) Destructuring
+//-| Rest Pattern & Perameters;
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+// Objects
+// We want to select only saturday from our opening hours
+// throw the rest into a new object using rest
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
 };
 
-//////////////////////////////////////////////////////////
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
 
+const x = [23, 5, 7];
+add(...x);
+
+// Ordering Pizza
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 //////////////////////////////////////////////////////////
-//-| Using Spread Operator (...)
+//////////////////////////////////////////////////////////
+/*
+//-| Using Spread Operator (...);
 const arr = [7, 8, 9];
 /////////////////////////
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // same as 👇
@@ -105,9 +155,11 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
-
-/*
+*/
 //////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+/*
 //-| Destructuring Objects >>
 restaurant.orderDelivery({
   time: '22:30',
