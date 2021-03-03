@@ -48,15 +48,32 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/////////////////////////////////////
+//-| The Nullish Coalescing Operator;
+/////////////////////////////////////
+// REMEMBER : The Nullish Coalescing Operator;
+// 1) Introduced in ES2020
+// 2) Work similar to || operator
+// 3) Nullish: null and undefined (NOT 0 or '')
+/////////////////////////////////////
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+// In Practice:
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+//////////////////////////////////////////////////////////
+/*
+//////////////////////////////////////////////////////////
 //-| Short Circuiting ( && AND || );
 console.log('---- OR ----');
-//////////////////////////////////////////////////////////
+////////////////////////////////////
 // REMEMBER : Short Circuiting ||;
-//////////////////////////////////////////////////////////
+////////////////////////////////////
 // Returns: First Truthy Value of all operants;
 // Returns: last value if all are falsy;
 //: Useful for setting default values;
-//////////////////////////////////////////////////////////
+////////////////////////////////////
 // Use ANY data type, return ANY data type, short-circuiting;
 console.log(3 || 'Ben');
 console.log('' || 'Ben');
@@ -71,9 +88,9 @@ console.log(guests1);
 // 2) Best Method:
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
-//////////////////////////////////////////////////////////
+/////////////////////////////////////
 console.log('---- AND ----');
-//////////////////////////////////////////////////////////
+////////////////////////////////////
 // REMEMBER : Short Circuiting &&;
 // && Short circuits on the first falsy value, then ignores the rest of the truthy values.
 // it will return the first falsy value, if containing any truthy values.
@@ -90,6 +107,7 @@ if (restaurant.orderPizza) {
 }
 // 2) Best Method:
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', ' spinach');
+*/
 /*
 //////////////////////////////////////////////////////////
 // REMEMBER :  Spread Operator:
