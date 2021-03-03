@@ -48,9 +48,48 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+//-| Short Circuiting ( && AND || );
+console.log('---- OR ----');
+//////////////////////////////////////////////////////////
+// REMEMBER : Short Circuiting ||;
+//////////////////////////////////////////////////////////
+// Returns: First Truthy Value of all operants;
+// Returns: last value if all are falsy;
+//: Useful for setting default values;
+//////////////////////////////////////////////////////////
 // Use ANY data type, return ANY data type, short-circuiting;
 console.log(3 || 'Ben');
-
+console.log('' || 'Ben');
+console.log(true || 0);
+console.log(undefined || null);
+// Short circuiting will look for the first truthy value;
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// 1) inPractice:
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+// 2) Best Method:
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+//////////////////////////////////////////////////////////
+console.log('---- AND ----');
+//////////////////////////////////////////////////////////
+// REMEMBER : Short Circuiting &&;
+// && Short circuits on the first falsy value, then ignores the rest of the truthy values.
+// it will return the first falsy value, if containing any truthy values.
+// Returns the last falsy value if all are falsy!
+//: Useful for executing code in the 2nd Operands if the 1st one is TRUE;
+//////////////////////////////////////////////////////////
+console.log(0 && 'Ben');
+console.log(7 && 'Ben');
+console.log('Hello' && 23 && 23 && null && 'Ben');
+//////////////////////////////////////////////////////////
+// 1) inPractice:
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+// 2) Best Method:
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', ' spinach');
 /*
 //////////////////////////////////////////////////////////
 // REMEMBER :  Spread Operator:
