@@ -1,15 +1,17 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun'];
+
 const openingHours = {
-  thu: {
+  [weekdays[3]]: {
     open: 12,
     close: 22,
   },
-  fri: {
+  [weekdays[4]]: {
     open: 11,
     close: 23,
   },
-  sat: {
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -45,6 +47,29 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
+//WITHOUT optional chaining
+// >console.log(restaurant.openingHours.mon.open);
+// WITH optional chaining
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// Example:
+const days = ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'the following day';
+  console.log(`On ${day}, we are open ${open}`);
+}
+// On Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// On Arrays
+const users = [{ name: 'Ben', email: 'fdsasf@gmail.com' }];
+
+console.log(users[0]?.name ?? 'User array empty');
+
 /////////////////////////////////
 //   Enhanced Object Literals  //
 /////////////////////////////////
