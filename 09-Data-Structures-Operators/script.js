@@ -1,81 +1,82 @@
 'use strict';
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-
-  order: function (starterIndex, mainIndex) {
+  // ES6 enhanced object
+  openingHours,
+  // Set property to function expression
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
   // Function containing delivery infomation for current order
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
   // Method to order just pasta, which needs just 3 ingredients
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
   // Method to or pizza, storing the main ingredient variable and storing the rest of the ingredients together in another variable called (otherIngredients)
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
 };
 /////////////////////////////////
+//   Enhanced Object Literals  //
+/////////////////////////////////
+
+/////////////////////////////////
 // Looping Arrays: for-of Loop //
 /////////////////////////////////
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-// new array called menu, merging [starterMenu, mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// // new array called menu, merging [starterMenu, mainMenu];
 
-for (const item of menu) console.log(item);
-// looping over new menu array and saving them to the variable called item;
-/*
-for (const item of menu.entries()) {
-  console.log(item);
-} // same as above + setting index
-*/
-/*
-console.log([...menu.entries()]);
-// creating a new array for each 'item';
-*/
-/*
-// Old way
-for (const item of menu.entries()) {
-  console.log(`${item[i] + 1}: ${item[1]}`);
-}
-*/
-// Using Destructuring
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}: ${el}`);
-}
+// for (const item of menu) console.log(item);
+// // looping over new menu array and saving them to the variable called item;
+// /*
+// for (const item of menu.entries()) {
+//   console.log(item);
+// } // same as above + setting index
+// */
+// /*
+// console.log([...menu.entries()]);
+// // creating a new array for each 'item';
+// */
+// /*
+// // Old way
+// for (const item of menu.entries()) {
+//   console.log(`${item[i] + 1}: ${item[1]}`);
+// }
+// */
+// // Using Destructuring
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
 
 /////////////////////////////////////
 /*
