@@ -48,6 +48,34 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/////////////////////////////////
+// Looping Arrays: for-of Loop //
+/////////////////////////////////
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// new array called menu, merging [starterMenu, mainMenu];
+
+for (const item of menu) console.log(item);
+// looping over new menu array and saving them to the variable called item;
+/*
+for (const item of menu.entries()) {
+  console.log(item);
+} // same as above + setting index
+*/
+/*
+console.log([...menu.entries()]);
+// creating a new array for each 'item';
+*/
+/*
+// Old way
+for (const item of menu.entries()) {
+  console.log(`${item[i] + 1}: ${item[1]}`);
+}
+*/
+// Using Destructuring
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
 
 /////////////////////////////////////
 /*
