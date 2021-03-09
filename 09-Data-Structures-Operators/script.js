@@ -47,9 +47,55 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+//-|                                              ;
+//-|                   MAPS                       ;
+//-|                                              ;
+/* 
+   - Data Structure that we can use to map values to keys
+   - Like objects data is stored in key value pairs
+   - Unlike objects Maps can use anytype of key
+*/
+// > mapName.set('Sets the name of the key','The value of the the key')
+// > mapName.get('key') // Returns the chosen key
+// > mapName.has('key') // Returns Boolean | checks if exist
+// > mapName.delete('key') // Deletes key
+// > mapName.size // Size | Length
+// > mapName.clear // Empties the map
 
-//-| Sets;                       ;
+const rest = new Map();
+rest.set('name', 'CLassico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
 
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', '23')
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 8; // using boolean as map key
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear();
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+// using array as map keys
+console.log(rest.get(arr));
+
+// -|                                              ;
+// -|                   SETS                       ;
+// -|                                              ;
+/*
 const ordersSet = new Set([
   'Pasta',
   'Pizza',
@@ -78,9 +124,8 @@ console.log(staffUnique);
 console.log(
   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
 );
-
 console.log(new Set('benjaminmccarthy').size);
-
+*/
 //////////////////////////////////////////////////
 
 // //-|                                                             ;
