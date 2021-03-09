@@ -48,9 +48,47 @@ const restaurant = {
   },
 };
 //-|                                              ;
+//-|                MAPS-Part2                    ;
+//-|                                              ;
+/* Populating a map without the 'Set Method'. */
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 😁'],
+  [false, 'Try again'],
+]);
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+console.log(`Your answer was ${answer}`);
+
+console.log(question.get(question.get('correct') === answer));
+
+//-| Convert map to array;
+console.log([...question]);
+// console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+//-|                                              ;
 //-|                   MAPS                       ;
 //-|                                              ;
 /* 
+   - Maps are iterables
    - Data Structure that we can use to map values to keys
    - Like objects data is stored in key value pairs
    - Unlike objects Maps can use anytype of key
@@ -61,7 +99,7 @@ const restaurant = {
 // > mapName.delete('key') // Deletes key
 // > mapName.size // Size | Length
 // > mapName.clear // Empties the map
-
+/*
 const rest = new Map();
 rest.set('name', 'CLassico Italiano');
 rest.set(1, 'Firenze, Italy');
@@ -91,7 +129,7 @@ console.log(rest);
 console.log(rest.size);
 // using array as map keys
 console.log(rest.get(arr));
-
+*/
 // -|                                              ;
 // -|                   SETS                       ;
 // -|                                              ;
