@@ -1,6 +1,96 @@
 'use strict';
 ///////////////////////////////////////////////
+/*
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'jOnaS'; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const capitalName = function (p1) {
+  const p1L = p1.toLowerCase();
+  const p1C = p1L[0].toUpperCase() + p1L.slice(1);
+  console.log(p1C);
+};
+capitalName('bEn');
+
+// Comparing emails
+const email = 'hello@ben.io';
+const loginEmail = '  Hello@bEn.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+// Best Practice
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// Normalize Function >>
+const normalize = function (email) {
+  return email.toLowerCase().trim();
+};
+console.log(normalize('  dsDSA@gMaiL.coM  \n'));
+
+console.log(email === normalizedEmail);
+
+// Replacing parts of Strings
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane1 = 'Airbus A320neo';
+console.log(plane1.includes('A320'));
+console.log(plane1.includes('Boeing'));
+
+console.log(plane1.startsWith('Airb'));
+
+if (plane1.startsWith('Airbus') && plane1.endsWith('neo'))
+  console.log('Part of the new Airbus family');
+*/
+console.log('.............');
+console.log(
+  'I have some food, a laptop and an explosive device strapped to my weights, oh and also a pocket knife'
+);
+console.log('Socks and camera');
+console.log('Got some snacks and gun for protection');
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || 'bomb' || 'gun') {
+    console.log(
+      'You are carrying prohibited items. The police are on their way'
+    );
+  }
+  if (!baggage.includes('knife') || 'bomb' || 'gun') {
+    console.log('Please enjoy your flight');
+  }
+};
+
+checkBaggage(
+  'I have some food, a laptop and an explosive device strapped to my weights, oh and also a pocket knife'
+);
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and gun for protection');
+
+///////////////////////////////////////////////
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -34,6 +124,7 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+*/
 ///////////////////////////////////////////////
 
 /*
