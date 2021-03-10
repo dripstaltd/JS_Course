@@ -19,6 +19,13 @@ GOAL
 GOOD LUCK 😀
 */
 
+// > mapName.set('Sets the name of the key','The value of the the key')
+// > mapName.get('key') // Returns the chosen key
+// > mapName.has('key') // Returns Boolean | checks if exist
+// > mapName.delete('key') // Deletes key;
+// > mapName.size // Size | Length;
+// > mapName.clear // Empties the map;
+
 const gameEvents = new Map([
   [17, "⚽ GOAL"],
   [36, "🔁 Substitution"],
@@ -32,3 +39,19 @@ const gameEvents = new Map([
   [80, "⚽ GOAL"],
   [92, "🔶 Yellow card"],
 ]);
+
+gameEvents.delete(64);
+const events = [...gameEvents];
+
+// Prints to console
+for ([min, eValue] of gameEvents) {
+  console.log(`Minute ${min}, ${eValue}`);
+}
+
+console.log(events);
+const firstHalf = [];
+for (i = 0; i < events.length; i++) {
+  if (events.min[i] < 61) {
+    firstHalf.push(events[i]);
+  }
+}
