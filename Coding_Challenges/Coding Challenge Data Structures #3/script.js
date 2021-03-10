@@ -40,6 +40,7 @@ const gameEvents = new Map([
   [92, "🔶 Yellow card"],
 ]);
 
+/*
 gameEvents.delete(64);
 const events = [...gameEvents];
 
@@ -54,4 +55,24 @@ for (i = 0; i < events.length; i++) {
   if (events.min[i] < 61) {
     firstHalf.push(events[i]);
   }
+}
+*/
+
+// 1.
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+// 2.
+gameEvents.delete(64);
+
+// 3.
+const time = [...gameEvents.keys()].pop();
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
+// 4.
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? "FIRST" : "SECOND";
+  console.log(`[${half} HALF] ${min}: ${event}`);
 }
