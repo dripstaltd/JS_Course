@@ -1,5 +1,36 @@
 'use strict';
 ///////////////////////////////////////////////
+
+console.log('a+very+nice+string'.split('+'));
+console.log('benjamin mccarthy'.split(' '));
+
+const [firstName, lastName] = 'Benjamin mccarthy'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('Jessica ann smith davis');
+capitalizeName('ben lucas james mccarthy');
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Ben'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+};
+
+///////////////////////////////////////////////
 /*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
@@ -63,6 +94,8 @@ console.log(plane1.startsWith('Airb'));
 if (plane1.startsWith('Airbus') && plane1.endsWith('neo'))
   console.log('Part of the new Airbus family');
 */
+////////////////////////////////////////////////////
+/*
 console.log('.............');
 console.log(
   'I have some food, a laptop and an explosive device strapped to my weights, oh and also a pocket knife'
@@ -73,12 +106,15 @@ console.log('Got some snacks and gun for protection');
 const checkBaggage = function (items) {
   const baggage = items.toLowerCase();
 
-  if (baggage.includes('knife') || 'bomb' || 'gun') {
+  if (
+    baggage.includes('knife') ||
+    baggage.includes('bomb') ||
+    baggage.includes('gun')
+  ) {
     console.log(
       'You are carrying prohibited items. The police are on their way'
     );
-  }
-  if (!baggage.includes('knife') || 'bomb' || 'gun') {
+  } else {
     console.log('Please enjoy your flight');
   }
 };
@@ -88,7 +124,7 @@ checkBaggage(
 );
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and gun for protection');
-
+*/
 ///////////////////////////////////////////////
 /*
 const airline = 'TAP Air Portugal';
