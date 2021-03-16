@@ -1,5 +1,23 @@
 'use strict';
+///////////////////////////////////////////////
+/*
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeterHey = greet('Hey');
+*/
 
+const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+const greeterHey = greet('Hey');
+
+greeterHey('Ben');
+greeterHey('Giselle');
+
+greet('Waguan')('Mumzie!');
+///////////////////////////////////////////////
 /*
 // replace all spaces in a string
 const oneWord = function (str) {
