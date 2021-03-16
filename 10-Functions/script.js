@@ -1,5 +1,54 @@
 'use strict';
 ///////////////////////////////////////////////
+const heathrow = {
+  airline: 'Heathrow',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode} ${flightNum}, ${name}` });
+  },
+};
+
+heathrow.book(239, 'Benjamin McCarthy');
+heathrow.book(666, 'Donald Duck');
+// console.log(heathrow);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = heathrow.book;
+
+// Does not work:
+// book(23, 'Giselle McCarthy');
+
+// Call method
+book.call(eurowings, 23, 'Giselle McCarthy');
+book.call(heathrow, 239, 'Gareth McCarthy');
+console.log(eurowings);
+console.log(heathrow);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+book.call(swiss, 787, 'Lewis McCarthy');
+
+// Apply method takes an array
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// Call method taking array
+book.call(swiss, ...flightData);
+
+///////////////////////////////////////////////
 /*
 const greet = function (greeting) {
   return function (name) {
@@ -8,7 +57,7 @@ const greet = function (greeting) {
 };
 const greeterHey = greet('Hey');
 */
-
+/*
 const greet = greeting => name => console.log(`${greeting} ${name}`);
 
 const greeterHey = greet('Hey');
@@ -17,6 +66,7 @@ greeterHey('Ben');
 greeterHey('Giselle');
 
 greet('Waguan')('Mumzie!');
+*/
 ///////////////////////////////////////////////
 /*
 // replace all spaces in a string
