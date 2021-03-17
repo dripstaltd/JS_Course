@@ -7,9 +7,12 @@ const runOnce = function () {
 
 runOnce();
 
+// IIFE
 (function () {
-  console.log('This will never run again');
+  console.log('This also will never run again!');
 })();
+
+(() => console.log('This arrow function will never run again'))();
 
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
