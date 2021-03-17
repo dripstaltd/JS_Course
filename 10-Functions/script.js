@@ -1,12 +1,23 @@
 'use strict';
 
 const poll = {
-  registerNewAnswer: promptInput => inputNum => {},
+  registerNewAnswer() {
+    console.log('clicked poll');
+  },
 };
 
 const pollBtn = document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer);
+
+const questions = {
+  qAge: 'How old are you?',
+  qMake: 'What is the brand/make of you current vapourizer?',
+  q3: '',
+  q4: '',
+};
+
+// intake = amount => time =>
 
 /*
 ///////////////////////////////////////////////
