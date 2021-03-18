@@ -32,9 +32,9 @@ const account4 = {
   interestRate: 1,
   pin: 4444,
 };
-
+/////////////////////////////////////////////////
 const accounts = [account1, account2, account3, account4];
-
+/////////////////////////////////////////////////
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -43,16 +43,16 @@ const labelSumIn = document.querySelector('.summary__value--in');
 const labelSumOut = document.querySelector('.summary__value--out');
 const labelSumInterest = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
-
+/////////////////////////////////////////////////
 const containerApp = document.querySelector('.app');
 const containerMovements = document.querySelector('.movements');
-
+/////////////////////////////////////////////////
 const btnLogin = document.querySelector('.login__btn');
 const btnTransfer = document.querySelector('.form__btn--transfer');
 const btnLoan = document.querySelector('.form__btn--loan');
 const btnClose = document.querySelector('.form__btn--close');
 const btnSort = document.querySelector('.btn--sort');
-
+/////////////////////////////////////////////////
 const inputLoginUsername = document.querySelector('.login__input--user');
 const inputLoginPin = document.querySelector('.login__input--pin');
 const inputTransferTo = document.querySelector('.form__input--to');
@@ -62,17 +62,50 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
+// DEPOSITS CODE - Creating html with forEach
 /////////////////////////////////////////////////
-// LECTURES
+const displayMovements = function (movements) {
+  // use this to read data
+  containerMovements.innerHTML = ' ';
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
 
+    const html = `
+      <div class="movements__row">
+        <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+        <div class="movements__value">${mov}</div>
+        </div>
+      <div class="movements__row">
+    `;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+displayMovements(account1.movements);
+
+/////////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/*
+// LECTURES
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+*/
 /////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURES
+/////////////////////////////////////////////////
+/*
 // MAP
 currencies.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
@@ -83,7 +116,7 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
-
+*/
 /////////////////////////////////////////////////
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
