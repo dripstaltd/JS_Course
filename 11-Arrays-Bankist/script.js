@@ -62,6 +62,8 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 /*.:|REGION|:.*/
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+/*.:|REGION|:.*/
 /////////////////////////////////////////////////
 // DEPOSITS CODE - Creating html with forEach
 /////////////////////////////////////////////////
@@ -76,20 +78,119 @@ const displayMovements = function (movements) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}</div>
-        </div>
+    <div class="movements__value">${mov}</div>
+    </div>
     `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-
-displayMovements(account1.movements);
-
-////////////////
 /*.:|REGION|:.*/
-////////////////
+// calcDisplayBalance function
+displayMovements(account1.movements); // create usernames
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements); // CALL
+/*.:|REGION|:.*/
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts);
 
 /////////////////////////////////////////////////
+/**/
+/*.:|REGION|:.*/ const eurToUsd = 1.1;
+// using map method as an arrow function
+const moveUSDArrow = movements.map(mov => mov * eurToUsd);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+// console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movements ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+// console.log(movementsDescriptions);
+/*.:|REGION|:.*/
+
+/*
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+*/
+/*.:|REGION|:.*/
+
+// console.log(movements);
+// (acc) accumulator -> SNOWBALL
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+// console.log(balance);
+
+let balance2 = 0;
+
+for (const mov of movements) balance2 += mov;
+// console.log(balance2);
+
+/*.:|REGION|:.*/
+const deposits = movements.filter(mov => mov > 0);
+const withdrawals = movements.filter(mov => mov < 0);
+// console.log(movements);
+// console.log('deposits');
+// console.log(deposits);
+// console.log('------------');
+// console.log('withdrawals');
+// console.log(withdrawals);
+// console.log('------------');
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+
+// console.log(depositsFor);
+
+/*.:|REGION|:.*/
+// using map method to create and fill
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+// // logging
+// console.log(movements);
+// console.log(movementsUSD);
+// console.log(movementsUSDfor);
+// console.log(moveUSDArrow);
+/**/
+/*.:|REGION|:.*/
 /*
 // LECTURES
 const currencies = new Map([
@@ -99,12 +200,7 @@ const currencies = new Map([
 ]);
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 */
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // LECTURES
-/////////////////////////////////////////////////
 /*
 // MAP
 currencies.forEach(function (value, key, map) {
@@ -143,34 +239,5 @@ movements.forEach(function (mov, i, arr) {
 // 2: function(400)
 */
 /////////////////////////////////////////////////
-/*
-let arr = ['a', 'b', 'c', 'd', 'e'];
-// SLICE
-console.log(arr.slice(2));
-console.log(arr.slice(2, 4));
-console.log(arr.slice(-2));
-console.log(arr.slice(-1));
-console.log(arr.slice(1, -2));
-console.log([...arr]);
 
-// SPLICE - Mutates the original array // Removes | Deletes
-arr.splice(-1);
-console.log(arr);
-arr.splice(1, 2);
-console.log(arr);
-
-// REVERSE
-arr = ['a', 'b', 'c', 'd', 'e'];
-const arr2 = ['j', 'i', 'h', 'g', 'f'];
-
-console.log(arr2.reverse());
-console.log(arr2);
-
-// CONCAT
-const letters = arr.concat(arr2);
-console.log(letters);
-console.log([...arr, ...arr2]);
-
-// JOIN
-console.log(letters.join(' - '));
-*/
+// Maximum value

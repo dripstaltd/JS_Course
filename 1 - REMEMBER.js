@@ -44,5 +44,40 @@
 //-|                                             ;
 //> 1. ;
 //> 2. ;
-
+//-|                                               ;
+//-|               ARRAY METHODS                   ;
+//-|                                               ;
+//-|                                               ;
+//>      SLICE: Doesn't effect the original arr    ;
+//:    EXAMPLE: arr.slice(1, -2)                   ;
+//>     SPLICE: Mutates original arr               ;
+//:    EXAMPLE: arr.splice(1, 2)                   ;
+//>    REVERSE: Reverses the original arr          ;
+//:    EXAMPLE: arr2.reverse()                     ;
+//>     CONCAT: Combines 2 arrays togethether      ;
+//:    EXAMPLE: arr.concat(arr2)                   ;
+//: ...EXAMPLE: [...arr, ...arr2]                  ;
+//>       JOIN: Creates a string from an array     ;
+//:    EXAMPLE: arr.join(' - ')                    ;
+//>                                                ;
+// RUST KEY:
 // K6KRV24-LLAAJMM-X7U3AKK-E6YEZKQ
+////////////////
+/*.:|REGION|:.*/
+////////////////
+//-|                                               ;
+//-|          MAP - FILTER - REDUCE                ;
+//-|                                               ;
+//-|                                               ;
+//>    MAP: Creates a new arr based on original arr;
+//>       : Takes the arr, loops and applies Call  ;
+//>       : Back function, that we specify         ;
+//:EXAMPLE: arr.map(mov => mov * eurToUsd)   ;
+//:EXAMPLE: arr.map((current, index, entire arr)=>);
+//> FILTER: Only elements that pass our conditions ;
+//>       : are returned in the new array          ;
+//:EXAMPLE: arr.filter(current => current < 0)                ;
+//> REDUCE: Boils ('reduces') all array elements   ;
+//>       : down to one value, adding them together;
+//:EXAMPLE: arr.reduce(acc + current)              ;
+//>                                                ;
