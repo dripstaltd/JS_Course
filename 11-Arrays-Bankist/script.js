@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 // BANKIST APP
-
+/*.:|REGION|:.*/
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -35,6 +35,7 @@ const account4 = {
 /////////////////////////////////////////////////
 const accounts = [account1, account2, account3, account4];
 /////////////////////////////////////////////////
+/*.:|REGION|:.*/
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -60,7 +61,7 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
-
+/*.:|REGION|:.*/
 /////////////////////////////////////////////////
 // DEPOSITS CODE - Creating html with forEach
 /////////////////////////////////////////////////
@@ -77,18 +78,17 @@ const displayMovements = function (movements) {
     } ${type}</div>
         <div class="movements__value">${mov}</div>
         </div>
-      <div class="movements__row">
     `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
+
 displayMovements(account1.movements);
 
-/////////////////////////////////////////////////
+////////////////
+/*.:|REGION|:.*/
+////////////////
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 /////////////////////////////////////////////////
 /*
 // LECTURES
