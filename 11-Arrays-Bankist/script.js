@@ -241,3 +241,22 @@ movements.forEach(function (mov, i, arr) {
 /////////////////////////////////////////////////
 
 // Maximum value
+const max = movements.reduce(
+  (acc, mov) => (acc > mov ? acc : mov),
+  movements[0]
+);
+// console.log(max);
+
+/*.:|REGION|:.*/
+const eurToUSD = 1.1;
+console.log(movements);
+const totalDepositsUSD = movements
+  .filter(mov => mov < 0)
+  .map((mov, i, arr) => {
+    // console.log(arr);
+    return mov * eurToUSD;
+  })
+  //.map(mov => mov * eurToUSD)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);

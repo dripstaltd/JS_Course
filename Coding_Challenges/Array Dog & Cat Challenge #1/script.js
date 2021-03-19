@@ -45,6 +45,7 @@ const data2 = {
 
 const jDarr = data2.jArr;
 const kDarr = data2.kArr;
+let dogAges = [];
 
 // Check Dogs Function
 const checkDogs = function (
@@ -53,20 +54,38 @@ const checkDogs = function (
   dogsKate = data1.kArr
 ) {
   // 2) Create and array with both julias correct dogs and kates dogs in 1 array
-  const dogAges = [...dogsJulia, ...dogsKate];
+  dogAges = [...dogsJulia, ...dogsKate];
   let dogNum = 1;
   // 3) for each remaining dog check weather it is a puppy or not
-  dogAges.forEach((age) => {
-    if (age >= 3) {
-      console.log(`Dog number ${dogNum++}
-      is an adult, and is ${age} years old`);
-    } else {
-      console.log(`Dog number ${dogNum++} is still a puppy
-      🐶`);
-    }
-  });
+  dogAges.forEach((age) =>
+    age >= 3
+      ? console.log(`Dog number ${dogNum++}
+      is an adult, and is ${age} years old`)
+      : console.log(`Dog number ${dogNum++} is still a puppy
+      🐶`)
+  );
 };
+
 // Test Data 1
 checkDogs();
 // Test Data 2
-checkDogs(jDarr, kDarr);
+checkDogs(jDarr, kDarr); //coding challenge #2 //////////////////////////////////////////
+//////////////////////////////////////////
+/*.:|REGION|:.*/
+
+const calcAverageHumanAge = function (arr) {
+  const humanAges = arr.map((arr) => (arr <= 2 ? 2 * arr : 16 + arr * 4));
+  const adults = humanAges.filter((age) => age >= 18);
+  console.log(humanAges);
+  console.log(adults);
+
+  const average = adults.reduce(
+    (acc, age, _, arr) => acc + age / arr.length,
+    0
+  );
+  return average;
+};
+
+const avg1 = calcAverageHumanAge(dogAges);
+
+console.log(avg1);
